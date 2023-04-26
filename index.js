@@ -24,7 +24,7 @@ class Player {
 	}
 
 	draw() {
-		c.fillStyle = 'MAGENTA';
+		c.fillStyle = 'magenta';
 		c.fillRect(this.position.x, this.position.y, this.width, this.height)
 	}
 
