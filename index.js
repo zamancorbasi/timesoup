@@ -107,9 +107,9 @@ const PlatformFloating =  createImage('https://phocopol.sirv.com/pixil-frame-0%2
 
 const YouWinCat =  createImage('https://phocopol.sirv.com/pixil-frame-0%20(17).png');
 
-const Mountains = createImage('https://phocopol.sirv.com/aaatrees.png');
+//const Mountains = createImage('https://phocopol.sirv.com/aaatrees.png');
 
-const Background = createImage('https://phocopol.sirv.com/sad.png');
+//const Background = createImage('https://phocopol.sirv.com/sad.png');
 
 const platforms = [
 	new Platform({x:0, y:470, image: PlatformMiddle}), 
@@ -125,11 +125,11 @@ const platforms = [
 	new Platform({x: 1350+PlatformMiddle.width, y: 470, image: PlatformLeft}),
 ]
 
-const biblos = [
+/*const biblos = [
 	new Biblo({x:0, y:0, image: Background}),
 	new Biblo({x:0, y:0, image:Mountains}),
 	//new Biblo({x:1500, y:350, image:Flag}),
-]
+]*/
 
 const kedis = [
 	new Kedi({x:450, y:100, image: YouWinCat}),
@@ -154,9 +154,9 @@ function animate(){
 	
 	c.fillRect(0,0, canvas.width, canvas.height)
 	
-	biblos.forEach(Biblo => {
+	/*biblos.forEach(Biblo => {
 		Biblo.draw()
-	})
+	})*/
 	
 	platforms.forEach(platform => {
 		platform.draw()
@@ -181,14 +181,14 @@ function animate(){
 				platform.position.x -= 5
 			})
 
-			biblos.forEach(Biblo => {
+			/*biblos.forEach(Biblo => {
 				//if(Biblo.image==Flag)
 				//Biblo.position.x -= 5
 				if(Biblo.image==Mountains)
 				Biblo.position.x -= 3
 				if(Biblo.image==Background)
 				Biblo.position.x -= 2
-			})
+			})*/
 		}
 
 		else if(keys.left.pressed) {
@@ -198,14 +198,14 @@ function animate(){
 				platform.position.x += 5
 			})
 
-			biblos.forEach(Biblo => {
+			/*biblos.forEach(Biblo => {
 				//if(Biblo.image==Flag)
 				//Biblo.position.x += 5
 				if(Biblo.image==Mountains)
 				Biblo.position.x += 3
 				if(Biblo.image==Background)
 				Biblo.position.x += 2
-			})
+			})*/
 		}
 	}
 
