@@ -103,7 +103,7 @@ const PlatformLeft = createImage('https://phocopol.sirv.com/sol-uc-zemin.png');
 
 const PlatformFloating =  createImage('https://phocopol.sirv.com/pixil-frame-0%20(11).png');
 
-const Flag = createImage('https://phocopol.sirv.com/flag.png');
+const Flag = createImage('https://phocopol.sirv.com/pixil-frame-0%20(18).png');
 
 const YouWinCat =  createImage('https://phocopol.sirv.com/pixil-frame-0%20(17).png');
 
