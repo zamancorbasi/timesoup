@@ -103,7 +103,7 @@ const PlatformLeft = createImage('https://phocopol.sirv.com/sol-uc-zemin.png');
 
 const PlatformFloating =  createImage('https://phocopol.sirv.com/pixil-frame-0%20(11).png');
 
-const Flag = createImage('https://phocopol.sirv.com/pixil-frame-0%20(18).png');
+//const Flag = createImage('https://phocopol.sirv.com/pixil-frame-0%20(18).png');
 
 const YouWinCat =  createImage('https://phocopol.sirv.com/pixil-frame-0%20(17).png');
 
@@ -128,7 +128,7 @@ const platforms = [
 const biblos = [
 	new Biblo({x:0, y:0, image: Background}),
 	new Biblo({x:0, y:0, image:Mountains}),
-	new Biblo({x:1500, y:350, image:Flag}),
+	//new Biblo({x:1500, y:350, image:Flag}),
 ]
 
 const kedis = [
@@ -182,8 +182,8 @@ function animate(){
 			})
 
 			biblos.forEach(Biblo => {
-				if(Biblo.image==Flag)
-				Biblo.position.x -= 5
+				//if(Biblo.image==Flag)
+				//Biblo.position.x -= 5
 				if(Biblo.image==Mountains)
 				Biblo.position.x -= 3
 				if(Biblo.image==Background)
@@ -199,8 +199,8 @@ function animate(){
 			})
 
 			biblos.forEach(Biblo => {
-				if(Biblo.image==Flag)
-				Biblo.position.x += 5
+				//if(Biblo.image==Flag)
+				//Biblo.position.x += 5
 				if(Biblo.image==Mountains)
 				Biblo.position.x += 3
 				if(Biblo.image==Background)
