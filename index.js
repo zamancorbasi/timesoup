@@ -126,8 +126,8 @@ const platforms = [
 ]
 
 const biblos = [
-	//new Biblo({x:0, y:0, image: Background}),
-	//new Biblo({x:0, y:0, image:Mountains}),
+	new Biblo({x:0, y:0, image: Background}),
+	new Biblo({x:0, y:0, image:Mountains}),
 	new Biblo({x:1500, y:350, image:Flag}),
 ]
 
@@ -182,7 +182,12 @@ function animate(){
 			})
 
 			biblos.forEach(Biblo => {
+				if(Biblo.image==Flag)
 				Biblo.position.x -= 5
+				if(Biblo.image==Mountains)
+				Biblo.position.x -= 3
+				if(Biblo.image==Background)
+				Biblo.position.x -= 2
 			})
 		}
 
@@ -194,7 +199,12 @@ function animate(){
 			})
 
 			biblos.forEach(Biblo => {
+				if(Biblo.image==Flag)
 				Biblo.position.x += 5
+				if(Biblo.image==Mountains)
+				Biblo.position.x += 3
+				if(Biblo.image==Background)
+				Biblo.position.x += 2
 			})
 		}
 	}
