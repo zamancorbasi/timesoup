@@ -1,11 +1,8 @@
-
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
 canvas.width = 1024
 canvas.height = 576
-
-console.log(c)
 
 const gravity = 1
 
@@ -24,7 +21,7 @@ class Player {
 	}
 
 	draw() {
-		c.fillStyle = 'magenta';
+		c.fillStyle = 'MAGENTA';
 		c.fillRect(this.position.x, this.position.y, this.width, this.height)
 	}
 
@@ -92,47 +89,50 @@ class Kedi{
 
 const player = new Player()
 
-const PlatformMiddle = new Image();
-PlatformMiddle.src = 'https://phocopol.sirv.com/ara-zemin.png';
+function createImage(imageSrc){
+	const image = new Image();
+	image.src = imageSrc;
+	return image;
+}
 
-const PlatformRight = new Image();
-PlatformRight.src = 'https://phocopol.sirv.com/sag-uc-zemin.png';
+const PlatformMiddle = createImage('https://phocopol.sirv.com/ara-zemin.png');
 
-const PlatformLeft = new Image();
-PlatformLeft.src = 'https://phocopol.sirv.com/sol-uc-zemin.png';
+const PlatformRight = createImage('https://phocopol.sirv.com/sag-uc-zemin.png');
 
-const PlatformFloating = new Image();
-PlatformFloating.src = 'https://phocopol.sirv.com/pixil-frame-0%20(11).png';
+const PlatformLeft = createImage('https://phocopol.sirv.com/sol-uc-zemin.png');
 
-const Flag = new Image();
-Flag.src = 'https://phocopol.sirv.com/pixil-frame-0%20(14).png';
+const PlatformFloating =  createImage('https://phocopol.sirv.com/pixil-frame-0%20(11).png');
 
-const Kazandin = new Image();
-Kazandin.src = 'https://phocopol.sirv.com/pixil-frame-0%20(17).png';
+const Flag = createImage('https://phocopol.sirv.com/flag.png');
 
+const YouWinCat =  createImage('https://phocopol.sirv.com/pixil-frame-0%20(17).png');
+
+const Mountains = createImage('https://phocopol.sirv.com/aaatrees.png');
+
+const Background = createImage('https://phocopol.sirv.com/sad.png');
 
 const platforms = [
 	new Platform({x:0, y:470, image: PlatformMiddle}), 
 	new Platform({x:PlatformMiddle.width, y:470, image: PlatformMiddle}), 
 	new Platform({x: -12, y: 470, image: PlatformRight}),
 	new Platform({x: 2*PlatformMiddle.width, y: 470, image: PlatformLeft}),
+	
 	new Platform({x: 200, y: 300, image: PlatformFloating}),
 	new Platform({x: 500, y: 150, image: PlatformFloating}),
 
 	new Platform({x:1350, y:470, image: PlatformMiddle}), 
 	new Platform({x: 1350-12, y: 470, image: PlatformRight}),
 	new Platform({x: 1350+PlatformMiddle.width, y: 470, image: PlatformLeft}),
-
-
-
 ]
 
 const biblos = [
-	new Biblo({x:1500, y:350, image:Flag})
+	//new Biblo({x:0, y:0, image: Background}),
+	//new Biblo({x:0, y:0, image:Mountains}),
+	new Biblo({x:1500, y:350, image:Flag}),
 ]
 
 const kedis = [
-	new Kedi({x:450, y:100, image: Kazandin}),
+	new Kedi({x:450, y:100, image: YouWinCat}),
 ]
 
 
@@ -154,11 +154,10 @@ function animate(){
 	
 	c.fillRect(0,0, canvas.width, canvas.height)
 	
-	
-
 	biblos.forEach(Biblo => {
 		Biblo.draw()
 	})
+	
 	platforms.forEach(platform => {
 		platform.draw()
 	})
@@ -200,6 +199,8 @@ function animate(){
 		}
 	}
 
+	
+
 	platforms.forEach(platform => {
 	if (player.position.y + player.height <= platform.position.y &&
 		player.position.y + player.height + player.velocity.y >= platform.position.y && 
@@ -210,7 +211,7 @@ function animate(){
 		}
 	})
 
-	if (scrollOffSet>1000) {
+	if (scrollOffSet>1100) {
 		console.log('you win')
 		
 		kedis.forEach(Kedi => {
